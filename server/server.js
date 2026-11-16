@@ -9,11 +9,18 @@ import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
+
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://fin-track-xi-two.vercel.app",
+];
+
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: allowedOrigins,
 }));
+
 
 app.use(express.json());
 
